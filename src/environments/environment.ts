@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  OPEN_CHAT_API_BASE_URL: 'http://localhost:8000/'
+  OPEN_CHAT_API_BASE_URL: 'http://localhost:8000/api/'
 };
