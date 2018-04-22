@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SignupForm} from '../interfaces/signup-form';
+import { SignupForm } from '../interfaces/signup-form';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'oc-signup',
@@ -8,7 +9,7 @@ import {SignupForm} from '../interfaces/signup-form';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   model: SignupForm = {
     username: '',
@@ -21,7 +22,12 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    console.log(this.model);
+    console.log('signup model: ', this.model);
+
+    this.authService.signup(this.model).subscribe(userData => {
+      console.log(userData);
+      this.authService.setAuthToken(userData['token']);
+    });
   }
 
 }
