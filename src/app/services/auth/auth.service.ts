@@ -18,9 +18,17 @@ export class AuthService {
     return this.http.post(url, request);
   }
 
-  setAuthToken(token) {
+  setAuthToken(token): void {
     this.authToken = token;
     console.log('authToken: ', this.authToken);
+    localStorage.setItem('authToken', token);
+  }
+
+  authenticate(loginModelObject) {
+    const url = this.urlBuilder.openChatAPI('auth/signin');
+    const request = this.createLoginRequest(loginModelObject);
+
+    return this.http.post(url, request);
   }
 
   private createSignupRequest(signupModelObject): SignupRequest {
@@ -31,6 +39,14 @@ export class AuthService {
         password: signupModelObject.password
       };
     }
+  }
+
+  // TODO this may be unnecessary
+  private createLoginRequest(loginModelObject) {
+    return {
+      email: loginModelObject.email,
+      password: loginModelObject.password
+    };
   }
 
 }

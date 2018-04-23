@@ -3,7 +3,7 @@
   <div class="jumbotron col-md-8 offset-md-2">
     <form #signupForm>
       <div class="form-group">
-        <label class="sr-only" for="username">Email address</label>
+        <label class="sr-only" for="username">Username</label>
         <input type="text" class="form-control" id="username" placeholder="Username" name="username" #username [(ngModel)]="model.username">
       </div>
       <div class="form-group">
@@ -18,7 +18,7 @@
         <label class="sr-only" for="confirm-password">Confirm Password</label>
         <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" name="confirm-password" #password [(ngModel)]="model.confirmPassword">
       </div>
-      <button type="submit" class="btn btn-primary pull-right" (click)="signup()">Submit</button>
+      <button type="submit" class="btn btn-primary pull-right" (click)="signUp()">Sign Up</button>
     </form>
   </div>
 </div>

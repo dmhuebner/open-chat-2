@@ -1,17 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignupComponent } from './signup.component';
+import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user/user.service';
 import { UrlBuilderService } from '../services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
-import { UserService } from '../services/user/user.service';
-import { Router } from '@angular/router';
 
-describe('SignupComponent', () => {
-  let component: SignupComponent;
-  let fixture: ComponentFixture<SignupComponent>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,12 +19,12 @@ describe('SignupComponent', () => {
         FormsModule,
         HttpClientModule
       ],
-      declarations: [ SignupComponent ],
+      declarations: [ LoginComponent ],
       providers: [
         AuthService,
+        UserService,
         UrlBuilderService,
         Constants,
-        UserService,
         { provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); }}
       ]
     })
@@ -32,7 +32,7 @@ describe('SignupComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignupComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
