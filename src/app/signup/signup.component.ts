@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupForm } from '../interfaces/signup-form';
 import { AuthService } from '../services/auth/auth.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import {UserService} from '../services/user/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'oc-signup',
@@ -9,7 +12,9 @@ import { AuthService } from '../services/auth/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private userService: UserService,
+              private router: Router) { }
 
   model: SignupForm = {
     username: '',
@@ -21,13 +26,22 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  signup() {
+  signUp() {
     console.log('signup model: ', this.model);
 
-    this.authService.signup(this.model).subscribe(userData => {
-      console.log(userData);
-      this.authService.setAuthToken(userData['token']);
+    this.authService.signup(this.model).subscribe(response => {
+      console.log(response);
+      this.authService.setAuthToken(response['token']);
+      this.userService.getUserFromToken();
+      this.router.navigate(['/rooms']);
+    }, (error: HttpErrorResponse) => {
+      console.log(error);
     });
   }
+
+  // signup() {
+  //   console.log('signup model: ', this.model);
+  //   return this.userService.signup(this.model);
+  // }
 
 }

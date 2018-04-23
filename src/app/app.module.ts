@@ -12,6 +12,9 @@ import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UrlBuilderService } from './services/urlBuilder/url-builder.service';
 import { Constants } from './constants';
+import { RoomsComponent } from './rooms/rooms.component';
+import { UserService } from './services/user/user.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { Constants } from './constants';
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    RoomsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { Constants } from './constants';
   providers: [
     AuthService,
     UrlBuilderService,
-    Constants
+    Constants,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
