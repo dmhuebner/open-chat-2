@@ -1,0 +1,7 @@
+<div class="rooms-list-panel">
+  <h5 class="rooms-list-header">Rooms</h5>
+  <hr>
+  <ul class="rooms-list">
+    <li class="rooms-list-room" *ngFor="let room of roomsList" (click)="getAllRooms()">{{room.roomName}}</li>
+  </ul>
+</div>

@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="text-center">Sign Up for Open Chat</h2>
-  <div class="jumbotron col-md-8 offset-md-2">
+  <div class="jumbotron col-md-6 offset-md-3">
     <form #signupForm>
       <div class="form-group">
         <label class="sr-only" for="username">Username</label>
@@ -18,7 +18,7 @@
         <label class="sr-only" for="confirm-password">Confirm Password</label>
         <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" name="confirm-password" #password [(ngModel)]="model.confirmPassword">
       </div>
-      <button type="submit" class="btn btn-primary pull-right" (click)="signUp()">Sign Up</button>
+      <button type="submit" class="btn btn-primary btn-block" (click)="signUp()">Sign Up</button>
     </form>
   </div>
 </div>

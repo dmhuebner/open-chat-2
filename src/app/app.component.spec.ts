@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { BootstrapModule } from './bootstrap/bootstrap.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './shared/services/user/user.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -19,7 +20,8 @@ describe('AppComponent', () => {
         NavigationComponent
       ],
       providers: [
-        {provide: APP_BASE_HREF, useValue : '/' }
+        {provide: APP_BASE_HREF, useValue : '/' },
+        UserService
       ]
     }).compileComponents();
   }));

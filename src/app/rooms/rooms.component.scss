@@ -1,0 +1,13 @@
+.rooms-container {
+  height: 80vh;
+
+  @media (min-width: 768px) {
+    .rooms-list-container {
+      padding-right: 0;
+    }
+
+    .messages-container {
+      padding-left: 0;
+    }
+  }
+}

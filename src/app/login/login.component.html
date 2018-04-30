@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="text-center">Login to Open Chat</h2>
-  <div class="jumbotron col-md-8 offset-md-2">
+  <div class="jumbotron col-md-6 offset-md-3">
     <form #loginForm>
       <div class="form-group">
         <label class="sr-only" for="email">Email address</label>
@@ -10,7 +10,7 @@
         <label class="sr-only" for="password">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Password" name="password" #password [(ngModel)]="model.password">
       </div>
-      <button type="submit" class="btn btn-primary pull-right" (click)="login()">Login</button>
+      <button type="submit" class="btn btn-primary btn-block" (click)="login()">Login</button>
     </form>
   </div>
 </div>

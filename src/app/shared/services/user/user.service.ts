@@ -1,28 +1,26 @@
 import { Injectable } from '@angular/core';
-import {User} from '../../interfaces/user';
+import { User } from '../../interfaces/user';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
 
   constructor() { }
 
-  currentUser: User;
+  private userSource = new BehaviorSubject<User>(null);
+  currentUser: Observable<User> = this.userSource.asObservable();
 
   getUserFromToken(): User {
     const token = localStorage.getItem('authToken');
     const parsedTokenArray = token.split('.');
-    // console.log('user from token', JSON.parse(atob(parsedTokenArray[1])).user);
     const user = JSON.parse(atob(parsedTokenArray[1])).user;
     this.setCurrentUser(user);
     return user;
   }
 
   private setCurrentUser(user: User) {
-    this.currentUser = {
-      username: user.username,
-      email: user.email,
-      id: user.id
-    };
+    this.userSource.next(user);
   }
 
 }
