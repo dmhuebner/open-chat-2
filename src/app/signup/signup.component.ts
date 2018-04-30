@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SignupForm } from '../interfaces/signup-form';
-import { AuthService } from '../services/auth/auth.service';
+import { SignupForm } from '../shared/interfaces/signup-form';
+import { AuthService } from '../shared/services/auth/auth.service';
 import {HttpErrorResponse} from '@angular/common/http';
-import {UserService} from '../services/user/user.service';
+import {UserService} from '../shared/services/user/user.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -38,10 +38,5 @@ export class SignupComponent implements OnInit {
       console.log(error);
     });
   }
-
-  // signup() {
-  //   console.log('signup model: ', this.model);
-  //   return this.userService.signup(this.model);
-  // }
 
 }

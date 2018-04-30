@@ -3,10 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from '../services/auth/auth.service';
+import { AuthService } from '../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user/user.service';
-import { UrlBuilderService } from '../services/urlBuilder/url-builder.service';
+import { UserService } from '../shared/services/user/user.service';
+import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
 
 describe('LoginComponent', () => {

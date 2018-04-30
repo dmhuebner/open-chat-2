@@ -1,8 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RoomsComponent } from './rooms.component';
-import { UserService } from '../services/user/user.service';
-import { User } from '../interfaces/user';
+import { UserService } from '../shared/services/user/user.service';
+import { User } from '../shared/interfaces/user';
+import { RoomsListComponent } from './rooms-list/rooms-list.component';
+import { MessagesComponent } from './messages/messages.component';
+import { RoomService } from '../shared/services/room/room.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
+import { Constants } from '../constants';
 
 describe('RoomsComponent', () => {
   let component: RoomsComponent;
@@ -15,9 +21,14 @@ describe('RoomsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoomsComponent ],
+      declarations: [ RoomsComponent, RoomsListComponent, MessagesComponent ],
       providers: [
-        UserService
+        UserService,
+        RoomService,
+        HttpClient,
+        HttpHandler,
+        UrlBuilderService,
+        Constants
       ]
     })
     .compileComponents();
