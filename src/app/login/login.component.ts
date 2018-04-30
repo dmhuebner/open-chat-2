@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../services/auth/auth.service';
-import {Router} from '@angular/router';
-import {UserService} from '../services/user/user.service';
-import {HttpErrorResponse} from '@angular/common/http';
+import { AuthService } from '../shared/services/auth/auth.service';
+import { Router } from '@angular/router';
+import { UserService } from '../shared/services/user/user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'oc-login',

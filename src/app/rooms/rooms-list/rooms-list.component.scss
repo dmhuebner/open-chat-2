@@ -1,0 +1,30 @@
+@import '../../../styles';
+
+.rooms-list-panel {
+  height: 100%;
+  background-color: lightblue;
+  @include box-shadow(0, 3px, 10px, 10px, #777);
+  z-index: 5;
+
+  .rooms-list-header {
+    text-align: center;
+    padding-top: 0.8rem;
+  }
+
+  hr {
+    margin-bottom: 0;
+  }
+
+  .rooms-list {
+    list-style-type: none;
+    padding: 0;
+
+    .rooms-list-room {
+      border-bottom: 1px solid #aaa;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavigationComponent } from './navigation.component';
-import {BootstrapModule} from '../bootstrap/bootstrap.module';
+import { BootstrapModule } from '../bootstrap/bootstrap.module';
+import { UserService } from '../shared/services/user/user.service';
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -10,7 +11,8 @@ describe('NavigationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [BootstrapModule],
-      declarations: [ NavigationComponent ]
+      declarations: [NavigationComponent],
+      providers: [UserService]
     })
     .compileComponents();
   }));

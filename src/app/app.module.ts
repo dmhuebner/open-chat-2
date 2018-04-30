@@ -8,13 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutesModule } from './app-routes.module';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { UrlBuilderService } from './services/urlBuilder/url-builder.service';
-import { Constants } from './constants';
-import { RoomsComponent } from './rooms/rooms.component';
-import { UserService } from './services/user/user.service';
 import { LoginComponent } from './login/login.component';
+import { RoomsModule } from './rooms/rooms.module';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +20,6 @@ import { LoginComponent } from './login/login.component';
     NavigationComponent,
     HomeComponent,
     SignupComponent,
-    RoomsComponent,
     LoginComponent
   ],
   imports: [
@@ -31,14 +27,11 @@ import { LoginComponent } from './login/login.component';
     BootstrapModule,
     AppRoutesModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoomsModule,
+    SharedModule
   ],
-  providers: [
-    AuthService,
-    UrlBuilderService,
-    Constants,
-    UserService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

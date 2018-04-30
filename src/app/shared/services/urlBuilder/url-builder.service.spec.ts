@@ -1,7 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { UrlBuilderService } from './url-builder.service';
-import { Constants } from '../../constants';
+import { Constants } from '../../../constants';
 
 describe('UrlBuilderService', () => {
   beforeEach(() => {

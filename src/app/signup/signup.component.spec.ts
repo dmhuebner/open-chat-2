@@ -2,11 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignupComponent } from './signup.component';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../services/auth/auth.service';
+import { AuthService } from '../shared/services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
-import { UrlBuilderService } from '../services/urlBuilder/url-builder.service';
+import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
-import { UserService } from '../services/user/user.service';
+import { UserService } from '../shared/services/user/user.service';
 import { Router } from '@angular/router';
 
 describe('SignupComponent', () => {

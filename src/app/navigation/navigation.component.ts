@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../shared/interfaces/user';
+import { UserService } from '../shared/services/user/user.service';
 
 @Component({
   selector: 'oc-navigation',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   isCollapsed: Boolean = true;
+  currentUser: User;
 
   ngOnInit() {
+    this.userService.currentUser.subscribe((user) => this.currentUser = user);
   }
 
   toggleNavCollapse() {

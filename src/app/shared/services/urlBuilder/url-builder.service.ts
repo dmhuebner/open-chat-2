@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Constants } from '../../constants';
+import { Constants } from '../../../constants';
 
 @Injectable()
 export class UrlBuilderService {
