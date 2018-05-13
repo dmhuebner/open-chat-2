@@ -11,15 +11,10 @@ export class NavigationComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  isCollapsed: Boolean = true;
   currentUser: User;
 
   ngOnInit() {
     this.userService.currentUser.subscribe((user) => this.currentUser = user);
-  }
-
-  toggleNavCollapse() {
-    this.isCollapsed = !this.isCollapsed;
   }
 
 }

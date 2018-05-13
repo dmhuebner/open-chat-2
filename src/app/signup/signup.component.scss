@@ -1,0 +1,17 @@
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .signup-header {
+    text-align: center;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .signup-button {
+    width: 100%;
+  }
+}

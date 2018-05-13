@@ -1,15 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap-4-grid/css/grid.min.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* Mixins */
-@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow:inset $top $left $blur $color;
-    -moz-box-shadow:inset $top $left $blur $color;
-    box-shadow:inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
+/* Custom Material Styles */
+
+// Tabs
+.mat-tab-label-container {
+  .mat-tab-list {
+    .mat-tab-label-active {
+      background-color: #eee;
+    }
+
+    .mat-tab-label {
+      width: 50%;
+    }
   }
 }

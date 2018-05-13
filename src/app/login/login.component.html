@@ -1,16 +1,15 @@
-<div class="container">
-  <h2 class="text-center">Login to Open Chat</h2>
-  <div class="jumbotron col-md-6 offset-md-3">
-    <form #loginForm>
-      <div class="form-group">
-        <label class="sr-only" for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Email" name="email" #email [(ngModel)]="model.email">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" name="password" #password [(ngModel)]="model.password">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" (click)="login()">Login</button>
-    </form>
-  </div>
+<div class="login-container">
+  <h2 class="login-header">Login to Open Chat</h2>
+
+  <form #loginForm>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email" name="email" #email [(ngModel)]="model.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password" name="password" #password [(ngModel)]="model.password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="login-button" (click)="login()">Login</button>
+  </form>
 </div>
