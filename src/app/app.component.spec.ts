@@ -2,17 +2,17 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
-import { BootstrapModule } from './bootstrap/bootstrap.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './shared/services/user/user.service';
+import { MaterializeModule } from './materialize/materialize.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterModule.forRoot([]),
-        BootstrapModule,
+        MaterializeModule,
         HttpClientModule
       ],
       declarations: [
