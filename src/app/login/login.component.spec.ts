@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user/user.service';
 import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
+import { MaterializeModule } from '../materialize/materialize.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -17,7 +19,9 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MaterializeModule,
+        BrowserAnimationsModule
       ],
       declarations: [ LoginComponent ],
       providers: [

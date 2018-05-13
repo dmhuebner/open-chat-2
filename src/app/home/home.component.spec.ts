@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterializeModule } from '../materialize/materialize.module';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from '../shared/services/auth/auth.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
+import { Constants } from '../constants';
+import { Router } from '@angular/router';
+import { UserService } from '../shared/services/user/user.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +19,25 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports: [
+        FormsModule,
+        MaterializeModule,
+        BrowserAnimationsModule
+      ],
+      declarations: [
+        HomeComponent,
+        LoginComponent,
+        SignupComponent
+      ],
+      providers: [
+        AuthService,
+        HttpClient,
+        HttpHandler,
+        UrlBuilderService,
+        Constants,
+        { provide: Router, useClass: class { navigate = jasmine.createSpy('navigate'); }},
+        UserService
+      ]
     })
     .compileComponents();
   }));
@@ -27,10 +56,4 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it(`should have as title 'app'`, async(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.welcomeText).toEqual('Welcome to Open Chat!');
-  }));
 });
