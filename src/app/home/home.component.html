@@ -1,3 +1,14 @@
-<div class="welcome-banner">
-  <h1>{{welcomeText}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <mat-tab-group>
+        <mat-tab label="Login">
+          <oc-login></oc-login>
+        </mat-tab>
+        <mat-tab label="Signup">
+          <oc-signup></oc-signup>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
 </div>

@@ -1,24 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" (click)="toggleNavCollapse()"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Open Chat</a>
-
-  <div class="collapse navbar-collapse" [collapse]="isCollapsed">
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-      <li class="nav-item" *ngIf="!currentUser">
-        <a class="nav-link" routerLink="/signup" routerLinkActive="active">Sign Up<span class="sr-only"></span></a>
-      </li>
-      <li class="nav-item" *ngIf="!currentUser">
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">{{currentUser.username}}<span class="sr-only"></span></a>
-      </li>
-      <li class="nav-item" *ngIf="currentUser">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<mat-toolbar color="primary" class="navbar mat-elevation-z6">
+  <mat-toolbar-row>
+    <span class="navbar-brand" routerLink="/">Open Chat</span>
+    <span class="navbar-spacer"></span>
+    <button *ngIf="currentUser" mat-button routerLink="/" routerLinkActive="active">{{currentUser.username}}</button>
+    <button *ngIf="currentUser" mat-icon-button routerLink="/" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon></button>
+  </mat-toolbar-row>
+</mat-toolbar>
