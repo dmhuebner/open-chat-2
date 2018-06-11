@@ -1,6 +1,10 @@
 <div class="messages">
-  <p class="current-room-header">{{currentRoom.roomName}}</p>
-  <div class="messages-list">
-
-  </div>
+  <p class="current-room-header" *ngIf="currentRoom">{{currentRoom?.roomName}}</p>
+  <section class="messages-list">
+    <div class="message-container" *ngFor="let message of currentRoomMessages">
+      <div class="message-data message-author">{{message.username}}</div>
+      <div class="message-data message-content">{{message.content}}</div>
+      <div class="message-data message-created-date">{{message.dateCreated}}</div>
+    </div>
+  </section>
 </div>

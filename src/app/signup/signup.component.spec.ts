@@ -8,6 +8,8 @@ import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.ser
 import { Constants } from '../constants';
 import { UserService } from '../shared/services/user/user.service';
 import { Router } from '@angular/router';
+import { MaterializeModule } from '../materialize/materialize.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
@@ -17,9 +19,13 @@ describe('SignupComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MaterializeModule,
+        BrowserAnimationsModule
       ],
-      declarations: [ SignupComponent ],
+      declarations: [
+        SignupComponent
+      ],
       providers: [
         AuthService,
         UrlBuilderService,

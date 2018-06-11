@@ -1,0 +1,17 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .login-header {
+    text-align: center;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .login-button {
+    width: 100%;
+  }
+}
