@@ -1,25 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { Room } from '../../shared/interfaces/room';
+import {Message} from '../../shared/interfaces/message';
 
 @Component({
   selector: 'oc-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss']
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent {
 
   constructor() { }
 
-  currentRoom: Room;
-
-  ngOnInit() {
-    this.currentRoom = {
-      roomName: 'Example Room',
-      userIds: ['12345', '67890'],
-      private: true,
-      roomOwnerId: '12345',
-      _id: '12345'
-    };
-  }
+  @Input() currentRoomMessages: Message[];
+  @Input() currentRoom: Room;
 
 }

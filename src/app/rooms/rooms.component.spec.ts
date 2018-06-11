@@ -16,7 +16,8 @@ describe('RoomsComponent', () => {
   const user: User = {
     username: 'Username',
     email: 'test@email.com',
-    id: '123abc'
+    _id: '123abc',
+    admin: false
   };
 
   beforeEach(async(() => {

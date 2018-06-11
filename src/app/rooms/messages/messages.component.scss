@@ -16,5 +16,29 @@
 
   .messages-list {
     padding-left: 1.5rem;
+
+    .message-container {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #aaaaaa;
+      padding: 0;
+    }
+
+    div.message-data {
+      padding: 1rem;
+      margin: 0;
+    }
+
+    .message-author {
+      width: 12%;
+    }
+
+    .message-content {
+      width: 70%;
+    }
+
+    .message-created-date {
+      width: 18%;
+    }
   }
 }
