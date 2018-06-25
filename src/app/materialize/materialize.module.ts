@@ -6,6 +6,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTabsModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   exports: [
     MatSidenavModule,
@@ -24,7 +28,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTabsModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   declarations: []
 })

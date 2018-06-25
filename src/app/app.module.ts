@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +12,7 @@ import { RoomsModule } from './rooms/rooms.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from './materialize/materialize.module';
+import { NewRoomModalComponent } from './rooms/new-room-modal/new-room-modal.component';
 
 
 @NgModule({
@@ -33,6 +33,7 @@ import { MaterializeModule } from './materialize/materialize.module';
     RoomsModule,
     SharedModule
   ],
+  entryComponents: [NewRoomModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

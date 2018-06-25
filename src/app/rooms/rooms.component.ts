@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { UserService } from '../shared/services/user/user.service';
 import { User } from '../shared/interfaces/user';
-import {RoomService} from '../shared/services/room/room.service';
-import {Room} from '../shared/interfaces/room';
-import {Message} from '../shared/interfaces/message';
+import { RoomService } from '../shared/services/room/room.service';
+import { Room } from '../shared/interfaces/room';
+import { Message } from '../shared/interfaces/message';
 
 @Component({
   selector: 'oc-rooms',
@@ -29,17 +29,19 @@ export class RoomsComponent implements OnInit {
     this.setUsersRooms(this.currentUser);
   }
 
-  private setUsersRooms(user: User) {
-    this.roomService.getUsersRooms(user).subscribe((response) => {
-      this.roomsList = response;
-    }, (error) => {
-      console.log(error);
-    });
-  }
-
   onRoomClicked(eventData) {
     this.getMessagesByRoomId(eventData);
     this.currentRoom = eventData;
+  }
+
+  private setUsersRooms(user: User) {
+    this.roomService.getUsersRooms(user).subscribe((response) => {
+      if (response) {
+        this.roomsList = response;
+      }
+    }, (error) => {
+      console.log(error);
+    });
   }
 
   private getMessagesByRoomId(eventData) {

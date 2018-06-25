@@ -14,7 +14,7 @@ export class NavigationComponent implements OnInit {
   currentUser: User;
 
   ngOnInit() {
-    this.userService.currentUser.subscribe((user) => this.currentUser = user);
+    this.userService.currentUserObservable.subscribe((user) => this.currentUser = user);
   }
 
 }

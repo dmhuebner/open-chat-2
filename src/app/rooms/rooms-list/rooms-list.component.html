@@ -1,7 +1,14 @@
-<div class="rooms-list-panel">
-  <h5 class="rooms-list-header">Rooms</h5>
+<div class="rooms-list-panel container">
+  <div class="rooms-list-header-container row">
+    <div class="col-sm-6">
+      <h5 class="rooms-list-header">Rooms</h5>
+    </div>
+    <div class="col-sm-6">
+      <button class="new-room-btn" color="primary" mat-raised-button (click)="newRoomDialog()">New Room</button>
+    </div>
+  </div>
   <hr>
   <ul class="rooms-list">
-    <li class="rooms-list-room" *ngFor="let room of rooms" (click)="getMessages(room)">{{room.roomName}}</li>
+    <li class="rooms-list-room" *ngFor="let room of rooms" [ngClass]="{'active-Room' : currentRoom?._id === room._id}" (click)="getMessages(room)">{{room.roomName}}</li>
   </ul>
 </div>
