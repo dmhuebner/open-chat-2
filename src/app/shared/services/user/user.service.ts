@@ -9,7 +9,8 @@ export class UserService {
   constructor() { }
 
   private userSource = new BehaviorSubject<User>(null);
-  currentUser: Observable<User> = this.userSource.asObservable();
+  currentUser: User;
+  currentUserObservable: Observable<User> = this.userSource.asObservable();
 
   getUserFromToken(): User {
     const token = localStorage.getItem('authToken');
@@ -21,6 +22,7 @@ export class UserService {
 
   private setCurrentUser(user: User) {
     this.userSource.next(user);
+    this.currentUser = user;
   }
 
 }

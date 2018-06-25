@@ -5,10 +5,21 @@
   background-color: lightblue;
   @include box-shadow(0, 3px, 10px, 10px, #777);
   z-index: 5;
+  overflow: scroll;
 
-  .rooms-list-header {
+  .rooms-list-header-container {
+    display: flex;
     text-align: center;
     padding-top: 0.8rem;
+
+    .rooms-list-header {
+      margin: 0.8rem;
+    }
+
+    .new-room-btn {
+      padding: 0 1rem;
+      margin: 0;
+    }
   }
 
   hr {
@@ -22,9 +33,12 @@
     .rooms-list-room {
       border-bottom: 1px solid #aaa;
       width: 100%;
-      text-align: center;
       padding: 0.5rem;
       cursor: pointer;
+    }
+
+    .active-room {
+      background-color: #4054B2;
     }
   }
 }
