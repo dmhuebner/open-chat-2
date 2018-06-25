@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RoomsComponent } from './rooms.component';
 import { UserService } from '../shared/services/user/user.service';
 import { User } from '../shared/interfaces/user';
@@ -9,6 +8,7 @@ import { RoomService } from '../shared/services/room/room.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
+import { MaterializeModule } from '../materialize/materialize.module';
 
 describe('RoomsComponent', () => {
   let component: RoomsComponent;
@@ -23,6 +23,7 @@ describe('RoomsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RoomsComponent, RoomsListComponent, MessagesComponent ],
+      imports: [ MaterializeModule ],
       providers: [
         UserService,
         RoomService,

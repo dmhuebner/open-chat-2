@@ -1,0 +1,17 @@
+<div class="new-room-modal-container">
+  <p class="new-room-modal-header">Create New Room</p>
+  <hr>
+
+  <form #loginForm>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Room Name" name="room-name" #roomName [(ngModel)]="model.roomName">
+    </mat-form-field>
+
+    <mat-checkbox color="primary" class="private-room-checkbox" name="private" #private [(ngModel)]="model.private">Private</mat-checkbox>
+
+    <div class="new-room-modal-btn-container">
+      <button mat-raised-button class="new-room-modal-btn cancel-new-room-btn" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button class="new-room-modal-btn create-room-btn" color="primary" (click)="createRoom()">Create Room</button>
+    </div>
+  </form>
+</div>
