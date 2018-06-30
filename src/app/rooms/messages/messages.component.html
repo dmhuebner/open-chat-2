@@ -7,4 +7,8 @@
       <div class="message-data message-created-date">{{message.dateCreated}}</div>
     </div>
   </section>
+  <section class="new-message-container" *ngIf="currentRoom">
+    <input class="new-message-input" name="new-message-input" [(ngModel)]="newMessage" />
+    <button class="new-message" mat-raised-button color="primary" (click)="createNewMessage()">Send</button>
+  </section>
 </div>
