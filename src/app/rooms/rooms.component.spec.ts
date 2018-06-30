@@ -9,10 +9,13 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { UrlBuilderService } from '../shared/services/urlBuilder/url-builder.service';
 import { Constants } from '../constants';
 import { MaterializeModule } from '../materialize/materialize.module';
+import { FormsModule } from '@angular/forms';
+import { MessageService } from '../shared/services/message/message.service';
 
 describe('RoomsComponent', () => {
   let component: RoomsComponent;
   let fixture: ComponentFixture<RoomsComponent>;
+
   const user: User = {
     username: 'Username',
     email: 'test@email.com',
@@ -23,14 +26,18 @@ describe('RoomsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RoomsComponent, RoomsListComponent, MessagesComponent ],
-      imports: [ MaterializeModule ],
+      imports: [
+        MaterializeModule,
+        FormsModule
+      ],
       providers: [
         UserService,
         RoomService,
         HttpClient,
         HttpHandler,
         UrlBuilderService,
-        Constants
+        Constants,
+        MessageService
       ]
     })
     .compileComponents();
