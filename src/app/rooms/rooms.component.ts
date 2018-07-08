@@ -34,6 +34,10 @@ export class RoomsComponent implements OnInit {
     this.currentRoom = eventData;
   }
 
+  onNewMessageAdded(eventData) {
+    this.currentRoomsMessages.push(eventData);
+  }
+
   private setUsersRooms(user: User) {
     this.roomService.getUsersRooms(user).subscribe((response) => {
       if (response) {
