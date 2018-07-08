@@ -17,6 +17,8 @@
   }
 
   .messages-list {
+    overflow: scroll;
+
     .message-container {
       width: 100%;
       display: flex;

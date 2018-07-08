@@ -4,7 +4,7 @@
       <oc-rooms-list [rooms]="roomsList" (roomClicked)="onRoomClicked($event)"></oc-rooms-list>
     </div>
     <div class="messages-container col-md-9">
-      <oc-messages [currentRoomMessages]="currentRoomsMessages" [currentRoom]="currentRoom"></oc-messages>
+      <oc-messages [currentRoomMessages]="currentRoomsMessages" [currentRoom]="currentRoom" (newMessageAdded)="onNewMessageAdded($event)"></oc-messages>
     </div>
   </div>
 </div>
