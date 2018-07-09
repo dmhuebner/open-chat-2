@@ -1,14 +1,16 @@
 <div class="messages">
   <p class="current-room-header" *ngIf="currentRoom">{{currentRoom?.roomName}}</p>
-  <section class="messages-list">
+  <section #scrollToBottom class="messages-list">
     <div class="message-container" *ngFor="let message of currentRoomMessages">
       <div class="message-data message-author">{{message.username}}</div>
       <div class="message-data message-content">{{message.content}}</div>
-      <div class="message-data message-created-date">{{message.dateCreated}}</div>
+      <div class="message-data message-created-date">{{message.dateCreated | date: 'short'}}</div>
     </div>
   </section>
-  <section class="new-message-container" *ngIf="currentRoom">
-    <input class="new-message-input" name="new-message-input" [(ngModel)]="newMessage" />
-    <button class="new-message" mat-raised-button color="primary" (click)="createNewMessage()">Send</button>
-  </section>
+  <form #newMessageForm class="new-message-form">
+    <section class="new-message-container" *ngIf="currentRoom">
+      <input class="new-message-input" name="new-message-input" [(ngModel)]="newMessage" autocomplete="off" />
+      <button type="submit" class="new-message" mat-raised-button color="primary" (click)="createNewMessage()">Send</button>
+    </section>
+  </form>
 </div>
