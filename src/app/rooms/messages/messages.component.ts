@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, AfterViewChecked} from '@angular/core';
 import { Room } from '../../shared/interfaces/room';
 import { Message } from '../../shared/interfaces/message';
 import { MessageService } from '../../shared/services/message/message.service';
@@ -9,7 +9,7 @@ import * as io from 'socket.io-client';
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss']
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnInit, AfterViewChecked {
 
   constructor(private messageService: MessageService) { }
 
@@ -18,6 +18,8 @@ export class MessagesComponent implements OnInit {
 
   @Output() newMessageAdded: EventEmitter<Message> = new EventEmitter<Message>();
 
+  @ViewChild('scrollToBottom') private myScrollContainer: ElementRef;
+
   newMessage: string;
 
   private socket = io('http://localhost:8000/').connect();
@@ -25,7 +27,12 @@ export class MessagesComponent implements OnInit {
   ngOnInit() {
     this.socket.on('new-room-message', (newMessage) => {
       this.newMessageAdded.emit(newMessage);
+      this.scrollToBottom();
     });
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
   }
 
   createNewMessage(): void {
@@ -36,6 +43,14 @@ export class MessagesComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
+  }
+
+  private scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
 }
