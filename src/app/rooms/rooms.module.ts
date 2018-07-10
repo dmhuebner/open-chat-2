@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterializeModule } from '../materialize/materialize.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { AddUserToRoomModalComponent } from './add-user-to-room-modal/add-user-to-room-modal.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
     RoomsComponent,
     RoomsListComponent,
     MessagesComponent,
-    NewRoomModalComponent
+    NewRoomModalComponent,
+    AddUserToRoomModalComponent
   ]
 })
 export class RoomsModule { }

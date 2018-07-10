@@ -11,7 +11,8 @@ export class NewRoomModalComponent implements OnInit {
   model = {
     roomName: '',
     private: true,
-    roomOwnerId: ''
+    roomOwnerId: '',
+    userIds: []
   };
 
   ngOnInit() {}
@@ -25,6 +26,7 @@ export class NewRoomModalComponent implements OnInit {
 
   createRoom(): void {
     this.model.roomOwnerId = this.data.user._id;
+    this.model.userIds = [this.data.user._id];
     this.dialogRef.close(this.model);
   }
 

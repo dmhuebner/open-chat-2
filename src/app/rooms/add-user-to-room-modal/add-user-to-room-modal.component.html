@@ -1,0 +1,15 @@
+<div class="add-user-to-room-modal-container">
+  <p class="add-user-to-room-modal-header">Add someone to "{{data.room.roomName}}"</p>
+  <hr>
+
+  <form #addUserToRoomForm>
+    <mat-form-field>
+      <input matInput type="text" placeholder="User's Email" name="userEmail" #userEmail [(ngModel)]="model.userEmail">
+    </mat-form-field>
+
+    <div class="add-user-modal-btn-container">
+      <button mat-raised-button class="new-room-modal-btn cancel-add-user-btn" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button class="new-room-modal-btn add-user-btn" color="primary" (click)="addUserToRoom()">Add User</button>
+    </div>
+  </form>
+</div>
