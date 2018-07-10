@@ -1,0 +1,25 @@
+.add-user-to-room-modal-container {
+  .add-user-to-room-modal-header {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #777;
+  }
+
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .add-user-modal-btn-container {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-around;
+  }
+}

@@ -1,5 +1,8 @@
 <div class="messages">
-  <p class="current-room-header" *ngIf="currentRoom">{{currentRoom?.roomName}}</p>
+  <header class="current-room-header-container" *ngIf="currentRoom">
+    <p class="current-room-header">{{currentRoom?.roomName}}</p>
+    <button class="add-user-to-room" color="primary" (click)="addUserToRoomDialog()">Add someone</button>
+  </header>
   <section #scrollToBottom class="messages-list">
     <div class="message-container" *ngFor="let message of currentRoomMessages">
       <div class="message-data message-author">{{message.username}}</div>
