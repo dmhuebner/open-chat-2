@@ -23,3 +23,9 @@ $warn: mat-color($app-warn);
     box-shadow: $top $left $blur $color;
   }
 }
+
+@mixin border-radius($topRight, $bottomRight, $bottomLeft, $topLeft) {
+  -webkit-border-radius: $topRight $bottomRight $bottomLeft $topLeft;
+  -moz-border-radius: $topRight $bottomRight $bottomLeft $topLeft;
+  border-radius: $topRight $bottomRight $bottomLeft $topLeft;
+}
