@@ -9,6 +9,6 @@
   </div>
   <hr>
   <ul class="rooms-list">
-    <li class="rooms-list-room" *ngFor="let room of rooms" [ngClass]="{'active-Room' : currentRoom?._id === room._id}" (click)="getMessages(room)">{{room.roomName}}</li>
+    <li class="rooms-list-room" *ngFor="let room of rooms" [ngClass]="{'active-room' : currentRoom?._id === room._id}" (click)="getMessages(room)">{{room.roomName}}</li>
   </ul>
 </div>

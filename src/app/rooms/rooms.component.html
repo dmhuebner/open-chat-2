@@ -1,10 +1,6 @@
-<div class="container-fluid">
-  <div class="row rooms-container">
-    <div class="rooms-list-container col-md-3">
-      <oc-rooms-list [rooms]="roomsList" (roomClicked)="onRoomClicked($event)"></oc-rooms-list>
-    </div>
-    <div class="messages-container col-md-9">
-      <oc-messages [currentRoomMessages]="currentRoomsMessages" [currentRoom]="currentRoom" (newMessageAdded)="onNewMessageAdded($event)"></oc-messages>
-    </div>
-  </div>
-</div>
+<mat-drawer-container class="rooms-container">
+  <mat-drawer mode="side" [opened]="roomsDrawerOpen"><oc-rooms-list [rooms]="roomsList" (roomClicked)="onRoomClicked($event)"></oc-rooms-list></mat-drawer>
+  <mat-drawer-content>
+    <oc-messages [currentRoomMessages]="currentRoomsMessages" [currentRoom]="currentRoom" (newMessageAdded)="onNewMessageAdded($event)" (closeRoomsDrawerEvent)="toggleRoomsDrawer()"></oc-messages>
+  </mat-drawer-content>
+</mat-drawer-container>
