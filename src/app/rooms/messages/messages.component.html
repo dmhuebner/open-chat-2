@@ -1,7 +1,8 @@
 <div class="messages">
   <header class="current-room-header-container" *ngIf="currentRoom">
+    <button class="toggle-side-bar-btn btn-primary-white" color="primary" (click)="closeRoomsDrawer()">Rooms</button>
     <p class="current-room-header">{{currentRoom?.roomName}}</p>
-    <button class="add-user-to-room" color="primary" (click)="addUserToRoomDialog()">Add someone</button>
+    <button class="add-user-to-room btn-primary-white" color="primary" (click)="addUserToRoomDialog()">Add someone</button>
   </header>
   <section #scrollToBottom class="messages-list">
     <div class="message-container" *ngFor="let message of currentRoomMessages">

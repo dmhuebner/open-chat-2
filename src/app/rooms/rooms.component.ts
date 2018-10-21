@@ -22,6 +22,7 @@ export class RoomsComponent implements OnInit {
   roomsList: Room[];
   currentRoomsMessages: Message[];
   currentRoom: Room;
+  roomsDrawerOpen = true;
 
   ngOnInit() {
     this.currentUser = this.userService.getUserFromToken();
@@ -36,6 +37,10 @@ export class RoomsComponent implements OnInit {
 
   onNewMessageAdded(eventData) {
     this.currentRoomsMessages.push(eventData);
+  }
+
+  toggleRoomsDrawer() {
+    this.roomsDrawerOpen = !this.roomsDrawerOpen;
   }
 
   private setUsersRooms(user: User) {
