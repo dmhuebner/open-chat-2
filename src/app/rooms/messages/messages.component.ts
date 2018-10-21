@@ -22,6 +22,7 @@ export class MessagesComponent implements OnInit, AfterViewChecked {
   @Input() currentRoom: Room;
 
   @Output() newMessageAdded: EventEmitter<Message> = new EventEmitter<Message>();
+  @Output() closeRoomsDrawerEvent: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   @ViewChild('scrollToBottom') private myScrollContainer: ElementRef;
 
@@ -66,6 +67,10 @@ export class MessagesComponent implements OnInit, AfterViewChecked {
     }, (error) => {
       console.log(error);
     });
+  }
+
+  closeRoomsDrawer() {
+    this.closeRoomsDrawerEvent.emit(true);
   }
 
   private scrollToBottom(): void {

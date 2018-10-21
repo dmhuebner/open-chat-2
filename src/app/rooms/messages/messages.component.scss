@@ -1,7 +1,6 @@
 @import '../../../variables';
 
 .messages {
-  background-color: #eee;
   height: 100%;
   position: relative;
   display: flex;
@@ -13,6 +12,17 @@
     flex-direction: row;
     min-height: 2rem;
 
+    .btn-primary-white {
+      color: $primary;
+      border: 1px solid $primary;
+      @include border-radius(3px, 3px, 3px, 3px);
+      cursor: pointer;
+    }
+
+    .toggle-side-bar-btn {
+      margin-right: auto;
+    }
+
     .current-room-header {
       text-align: center ;
       margin: auto;
@@ -23,10 +33,6 @@
 
     .add-user-to-room {
       margin-left: auto;
-      color: $primary;
-      border: 1px solid $primary;
-      @include border-radius(3px, 3px, 3px, 3px);
-      cursor: pointer;
     }
   }
 
