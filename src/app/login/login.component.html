@@ -3,11 +3,11 @@
 
   <form #loginForm>
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" name="email" #email [(ngModel)]="model.email">
+      <input matInput type="email" placeholder="Email" name="email" #email required [(ngModel)]="model.email">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="password" placeholder="Password" name="password" #password [(ngModel)]="model.password">
+      <input matInput type="password" placeholder="Password" name="password" #password required [(ngModel)]="model.password">
     </mat-form-field>
 
     <button mat-raised-button color="primary" class="login-button" (click)="login()">Login</button>
