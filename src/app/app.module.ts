@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from './materialize/materialize.module';
 import { NewRoomModalComponent } from './rooms/new-room-modal/new-room-modal.component';
 import { AddUserToRoomModalComponent } from './rooms/add-user-to-room-modal/add-user-to-room-modal.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AddUserToRoomModalComponent } from './rooms/add-user-to-room-modal/add-
     FormsModule,
     HttpClientModule,
     RoomsModule,
-    SharedModule
+    SharedModule,
+    ToastrModule.forRoot()
   ],
   entryComponents: [
     NewRoomModalComponent,
