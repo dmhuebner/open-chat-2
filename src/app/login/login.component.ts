@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/rooms']);
       this.loggerService.success('Welcome!');
     }, (error: HttpErrorResponse) => {
-      this.loggerService.error(`Error: ${error.status}`, error.statusText, error);
+      this.loggerService.error(`Error: ${error.status}`, error.error, error);
     });
   }
 

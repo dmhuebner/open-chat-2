@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
       this.loggerService.success('Welcome!');
     }, (error: HttpErrorResponse) => {
       console.log(error);
-      this.loggerService.error(`Error: ${error.status}`, error.statusText, error);
+      this.loggerService.error(`Error: ${error.status}`, error.error, error);
     });
   }
 
