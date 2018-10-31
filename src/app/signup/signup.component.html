@@ -3,19 +3,22 @@
 
   <form #signupForm>
     <mat-form-field>
-      <input matInput placeholder="Username" name="username" #username [(ngModel)]="model.username">
+      <input matInput placeholder="Username" name="username" #username required [(ngModel)]="model.username">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" name="email" #email [(ngModel)]="model.email">
+      <input matInput type="email" placeholder="Email" name="email" #email required email [(ngModel)]="model.email">
+      <mat-error>That doesn't look like an email...</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="password" placeholder="Password" name="password" #password [(ngModel)]="model.password">
+      <input matInput type="password" placeholder="Password" name="password" #password required minlength="6" [(ngModel)]="model.password">
+      <mat-error>Password must be at least 6 characters</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="password" placeholder="Confirm password" name="confirm-password" #confirmPassword [(ngModel)]="model.confirmPassword">
+      <input matInput type="password" placeholder="Confirm password" name="confirm-password" #confirmPassword required minlength="6" [pattern]="model.password" [(ngModel)]="model.confirmPassword">
+      <mat-error>Must match the password</mat-error>
     </mat-form-field>
 
     <button mat-raised-button color="primary" class="signup-button" (click)="signUp()">Sign Up</button>
