@@ -6,6 +6,7 @@ import { AuthService } from './services/auth/auth.service';
 import { Constants } from '../constants';
 import { RoomService } from './services/room/room.service';
 import { MessageService } from './services/message/message.service';
+import { LoggerService } from './services/logger/logger.service';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { MessageService } from './services/message/message.service';
     Constants,
     UserService,
     RoomService,
-    MessageService
+    MessageService,
+    LoggerService
   ]
 })
 export class SharedModule { }

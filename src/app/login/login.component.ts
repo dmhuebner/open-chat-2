@@ -3,6 +3,7 @@ import { AuthService } from '../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../shared/services/user/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { LoggerService } from '../shared/services/logger/logger.service';
 
 @Component({
   selector: 'oc-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router,
-              private userService: UserService) { }
+              private userService: UserService,
+              private loggerService: LoggerService) { }
 
   model = {
     email: '',
@@ -29,8 +31,9 @@ export class LoginComponent implements OnInit {
       this.authService.setAuthToken(response['token']);
       this.userService.getUserFromToken();
       this.router.navigate(['/rooms']);
+      this.loggerService.success('Welcome!');
     }, (error: HttpErrorResponse) => {
-      console.log(error);
+      this.loggerService.error(`Error: ${error.status}`, error.statusText, error);
     });
   }
 
