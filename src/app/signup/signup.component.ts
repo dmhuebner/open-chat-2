@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupForm } from '../shared/interfaces/signup-form';
 import { AuthService } from '../shared/services/auth/auth.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {UserService} from '../shared/services/user/user.service';
-import {Router} from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { UserService } from '../shared/services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'oc-signup',
@@ -27,8 +27,6 @@ export class SignupComponent implements OnInit {
   }
 
   signUp() {
-    console.log('signup model: ', this.model);
-
     this.authService.signup(this.model).subscribe(response => {
       console.log(response);
       this.authService.setAuthToken(response['token']);
