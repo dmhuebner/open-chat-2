@@ -4,6 +4,7 @@ import { AuthService } from '../shared/services/auth/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { UserService } from '../shared/services/user/user.service';
 import { Router } from '@angular/router';
+import { LoggerService } from '../shared/services/logger/logger.service';
 
 @Component({
   selector: 'oc-signup',
@@ -14,7 +15,8 @@ export class SignupComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private userService: UserService,
-              private router: Router) { }
+              private router: Router,
+              private loggerService: LoggerService) { }
 
   model: SignupForm = {
     username: '',
@@ -32,8 +34,10 @@ export class SignupComponent implements OnInit {
       this.authService.setAuthToken(response['token']);
       this.userService.getUserFromToken();
       this.router.navigate(['/rooms']);
+      this.loggerService.success('Welcome!');
     }, (error: HttpErrorResponse) => {
       console.log(error);
+      this.loggerService.error(`Error: ${error.status}`, error.error, error);
     });
   }
 
